@@ -1,0 +1,6 @@
+[
+  {
+    "userMessage": "Please review this code.\n```typescript\nfunction add(a, b) {\n  return a + b;\n}\n```",
+    "assistantMessage": "## Code Review\n\n**Step 1 — Intent:** A simple addition function.\n\n**Step 2 — Correctness:** Works for numbers but untyped parameters allow unintended string concatenation: `add('hello', 'world')` returns `'helloworld'` silently.\n\n**Step 3 — Style/Maintainability:** Missing TypeScript type annotations.\n\n**Step 4 — Security:** No security concerns for this function.\n\n**Step 5 — Performance:** Optimal for this use case.\n\n### Recommendation\n\nAdd explicit types:\n\n```typescript\nfunction add(a: number, b: number): number {\n  return a + b;\n}\n```\n\nThis prevents accidental string concatenation and improves editor autocomplete."
+  }
+]
